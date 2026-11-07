@@ -1,0 +1,22 @@
+USE smart_learning;
+
+INSERT INTO courses_by_teacher (teacher_id, course_id, title, description, created_at) 
+VALUES (11111111-1111-1111-1111-111111111111, 33333333-3333-3333-3333-333333333333, 'Apache Cassandra Architecture', 'Introduction to NoSQL and Cassandra modeling', toTimestamp(now()));
+
+INSERT INTO students_by_course (course_id, student_id, student_name, student_email, enrolled_at) 
+VALUES (33333333-3333-3333-3333-333333333333, 22222222-2222-2222-2222-222222222222, 'Youssef El Amrani', 'youssef@ensa.ac.ma', toTimestamp(now()));
+
+INSERT INTO courses_by_student (student_id, course_id, course_title, teacher_name, enrolled_at) 
+VALUES (22222222-2222-2222-2222-222222222222, 33333333-3333-3333-3333-333333333333, 'Apache Cassandra Architecture', 'Pr. Mountasser Imadeddine', toTimestamp(now()));
+
+INSERT INTO assignments_by_course (course_id, assignment_id, title, description, due_date) 
+VALUES (33333333-3333-3333-3333-333333333333, 44444444-4444-4444-4444-444444444444, 'Mini Projet DAO', 'Implement Java DAO layer with Cassandra', toTimestamp(now()));
+
+INSERT INTO submissions_by_assignment (assignment_id, submission_id, student_id, student_name, file_url, submitted_at, grade, feedback) 
+VALUES (44444444-4444-4444-4444-444444444444, 55555555-5555-5555-5555-555555555555, 22222222-2222-2222-2222-222222222222, 'Youssef El Amrani', '/uploads/project.zip', toTimestamp(now()), 18.5, 'Excellent work on data model');
+
+INSERT INTO grades_by_student (student_id, submission_id, course_id, assignment_title, grade, feedback, graded_at) 
+VALUES (22222222-2222-2222-2222-222222222222, 55555555-5555-5555-5555-555555555555, 33333333-3333-3333-3333-333333333333, 'Mini Projet DAO', 18.5, 'Excellent work on data model', toTimestamp(now()));
+
+INSERT INTO activity_logs_by_user (user_id, activity_timestamp, activity_id, action_type, details) 
+VALUES (22222222-2222-2222-2222-222222222222, toTimestamp(now()), uuid(), 'SUBMIT_ASSIGNMENT', 'Submitted Mini Projet DAO');
