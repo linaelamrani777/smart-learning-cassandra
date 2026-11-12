@@ -1,7 +1,6 @@
 package com.smartlearning;
 
 import com.datastax.oss.driver.api.core.CqlSession;
-import com.smartlearning.config.CassandraSession;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,9 @@ public class CassandraConnectionTest {
 
     @BeforeAll
     public static void setUp() {
-        session = CassandraSession.getSession();
+        session = CqlSession.builder()
+            .withLocalDatacenter("datacenter1")
+            .build();
     }
 
     @Test
@@ -26,6 +27,8 @@ public class CassandraConnectionTest {
 
     @AfterAll
     public static void tearDown() {
-        CassandraSession.close();
+        if (session != null) {
+            session.close();
+        }
     }
 }

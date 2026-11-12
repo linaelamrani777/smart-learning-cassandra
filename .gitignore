@@ -1,1 +1,14 @@
+# Compiled Maven output
 target/
+
+# VS Code & IDE settings
+.vscode/
+.settings/
+.project
+.classpath
+*.iml
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
