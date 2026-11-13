@@ -1,0 +1,8 @@
+com\smartlearning\dao\EnrollmentDAO.class
+com\smartlearning\dao\CourseDao.class
+com\smartlearning\config\CassandraSession.class
+com\smartlearning\dao\ActivityDAO.class
+com\smartlearning\model\Activity.class
+com\smartlearning\model\Course.class
+com\smartlearning\model\Student.class
+com\smartlearning\dao\DaoException.class
